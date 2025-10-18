@@ -8,6 +8,12 @@ class Product:
         self.price = price
         self.stock = stock
 
+    def reduce_stock(self, quantity: int) -> None:
+        if quantity <= self.stock:
+            self.stock -= quantity
+        else:
+            print(f"{self.name} bazada yetarlicha mavjud emas.")
+
 
 class Customer:
     
@@ -27,6 +33,8 @@ class Item:
     def __init__(self, product: Product, quantity: int) -> None:
         self.product  = product
         self.quantity = quantity
+
+        product.reduce_stock(quantity)
 
 
 class Order:
