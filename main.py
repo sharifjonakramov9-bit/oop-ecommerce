@@ -1,5 +1,5 @@
 from models import Product, Customer, Order, Shop
-
+    
 # Do‘kon yaratish
 shop = Shop("TechStore")
 

@@ -1,10 +1,9 @@
 from typing import List
 
-
 class Product:
     
     def __init__(self, name: str, price: float, stock: int) -> None:
-        self.name  = name
+        self.name = name
         self.price = price
         self.stock = stock
 
@@ -18,7 +17,7 @@ class Product:
 class Customer:
     
     def __init__(self, name: str, balance: float) -> None:
-        self.name    = name
+        self.name = name
         self.balance = balance
 
     def deduct_balance(self, amount: float) -> None:
@@ -33,7 +32,6 @@ class Item:
     def __init__(self, product: Product, quantity: int) -> None:
         self.product  = product
         self.quantity = quantity
-
         product.reduce_stock(quantity)
 
 
@@ -60,8 +58,8 @@ class Order:
 class Shop:
     
     def __init__(self, name: str):
-        self.name                      = name
-        self.products: List[Product]   = []
+        self.name = name
+        self.products: List[Product] = []
         self.customers: List[Customer] = []
 
     def add_product(self, product: Product) -> None:
@@ -69,4 +67,3 @@ class Shop:
 
     def add_customer(self, customer: Customer) -> None:
         self.customers.append(customer)
-
